@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <main>
+        <section class="container container-home" id="home">
+            <header class="cabecalho">
+                <nav class="navegar">
+                    <a href="" class="infos icon" ><img src="./src/img/geral/logo ISRAELKG.png" class="logo" ></a>
+                    <div class="infos">
+                        <ul class="navigation">
+                            <li><button class="btn-nav home text" data-target="home">Home</button></li>
+                            <li><button class="btn-nav sobre text" data-target="sobre">Sobre</button></li>
+                            <li><button class="btn-nav projetos text" data-target="projetos">Projetos</button></li>
+                            <li><button class="btn-nav contato text" data-target="contato">Contato</button></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+    
+    
+            <section class="container container-introd">                
+                <div class="textos">
+                    <h1 class="title-introd title ">Desenvolvedor Front-End</h1>
+                    <p class="paragraph-introd text">Sou uma pessoa que ama códigos e a tecnologia, amo ser desenvolvedor.</p>
+                </div>
+    
+                <div class="foto">
+                    <img src="./src/img/geral/icon-perfil.webp" alt="" class="imagem">    
+                </div>
+
+                <footer class="container container-social">
+                    <article class="social">
+                        <ul class="social-links">
+                            <a href="mailto:israeldev.net@gmail.com?subject=Contato&body=Olá, quero saber mais informações." target="_blank" class="link link-email"><img src="./src/img/icons/icon-gmail.png" alt=""></a> 
+                            <a href="https://github.com/israelkg" target="_blank" class="link link-git"><img src="./src/img/icons/icon-github.png" alt=""></a> 
+                            <a href="www.linkedin.com/in/israel-goncalves-medeiros" target="_blank" class="link link-linkedin"><img src="./src/img/icons/icon-linkedin.png" alt=""></a> 
+                        </ul>
+                    </article>
+                </footer>
+            </section>
+        </section>
+        
+        <div class="scroll">
+            <div class="scroll-indicator">
+                <div class="scroll-ball"></div>
+            </div>
+        </div>
+
+
+        <section class="container container-about" id="sobre">
+            <div class="texts-about">
+                <div class="know-me">
+                    <h2 class="title-about title">Sobre Mim</h2>
+                    <p class="text text-ih">Olá! Meu nome é Israel Gonçalves Medeiros e sou desenvolvedor Front-End. Sou apaixonado por tecnologia e gosto de resolver desafios através do código. Tenho experiência em JavaScript, React, Node.js, Jest e APIs REST, além de atuar com testes automatizados e no desenvolvimento de interfaces responsivas e acessíveis.</p>
+                    <p class="text text-to">Comecei meus estudos em programação em fevereiro de 2024 e, em 2025, iniciei minha graduação em Análise e Desenvolvimento de Sistemas. Meu objetivo como profissional é contribuir para grandes projetos, expandir meu conhecimento constantemente e atuar remotamente.</p>
+                </div>
+                <div class="hard-skills">
+                    <h1 class="subtitle title">Hard-Skills</h1>
+                    <ul class="list-skills">
+                        <li> <img src="./src/img/icons/icon-html.png" alt=""> HTML</li>
+                        <li> <img src="./src/img/icons/icon-css.png" alt=""> CSS</li>
+                        <li> <img src="./src/img/icons/icon-js.png" alt=""> JavaScript</li>
+                        <li> <img src="./src/img/icons/icon-react.png" alt=""> React</li>
+                        <li> <img src="./src/img/icons/icon-tailwindcss.png" alt=""> Tailwind</li>
+                        <li> <img src="./src/img/icons/icon-jest.png" alt=""> Jest</li>
+                        <li> <img src="./src/img/icons/icon-github.png" alt=""> Github</li>
+                        <li> <img src="./src/img/icons/icon-git.png" alt=""> Git</li>
+                        <li> <img src="./src/img/icons/icon-redux.png" alt=""> Redux</li>
+                        <!-- <li> <img src="./src/img/icons/icon-html.png" alt=""> ContextAPI</li> -->
+                        <!-- <li> <img src="./src/img/icons/icon-html.png" alt=""> Vite</li> -->
+                        <!-- <li> <img src="./src/img/icons/icon-html.png" alt=""> Responsive</li> -->
+                    </ul>    
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="container container-project" id="projetos">
+            <h1 class="title-projects title">Projetos</h1>
+
+            <div class="projects">
+                <a class="card" href="https://israelkg.github.io/fetch-github-api/" target="_blank">
+                    <h1 class="title">GitHub Explorer</h1>
+                    <img class="img-project" src="./src/img/pages/github-pages.jpg" alt="projeto-github"></img>
+
+                    <ul class="icons">
+                        <li><img class="icon-lg" src="./src/img/icons/icon-js.png" alt=""></li>
+                        <li><img class="icon-lg" src="./src/img/icons/icon-html.png" alt=""></li>
+                        <li><img class="icon-lg" src="./src/img/icons/icon-css.png" alt=""></li>
+                    </ul>
+                </a>
+
+                <a class="card" href="" target="_blank">
+                    <h1 class="title">Form Validate</h1>
+                    <img class="img-project" src="./src/img/pages/form-validate.webp" alt="projeto form">
+
+                    <ul class="icons">
+                        <li><img class="icon-lg icon-react" src="./src/img/icons/icons8-react-20.png" alt=""></li>
+                        <li><img class="icon-lg" src="./src/img/icons/icon-js.png" alt=""></li>
+                    </ul>
+                </a>
+            </div>
+        </section>
+        
+
+        <section class="container container-contact" id="contato">
+            <article class="contato">
+                <h1 class="title">Contato</h1>
+                <form action="https://formspree.io/f/mvgkwojw" method="POST" class="form-contact" >
+                    <div class="contact-form-field">
+                        <label for="name">Name</label>
+                        <input class="name" placeholder="Digite seu Nome" name="name" id="name" type="text" required>
+                    </div>
+                    <div class="contact-form-field">
+                        <label for="email">Email</label>
+                        <input class="email" placeholder="Digite Seu Email" name="email" id="email" type="text" required>
+                    </div>
+                    <div class="contact-form-field">
+                        <label for="email">Mensagem</label>
+                        <textarea class="mensagem" placeholder="Digite Sua mensagem" name="message" id="message" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </article>
+        </section>
+    </main>
+    
+
+    <script src="./src/js/index.js"></script>
+</body>
+</html>
