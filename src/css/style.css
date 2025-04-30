@@ -181,7 +181,7 @@ li .btn-nav:hover {
 /* CONTAINER ABOUT */
 .container-about {
     /* background-color: rgb(206, 206, 206); */
-    padding: 90px;
+    padding: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,7 +196,7 @@ li .btn-nav:hover {
 .container-about .title {
     font-size: 45px;
     width: 100%;
-    margin: 0 0 50px 0;
+    margin: 0 0 40px 0;
     display: flex;
     color: white;
     justify-content: center;
@@ -256,7 +256,7 @@ li .btn-nav:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 0 ;
+    padding: 60px 0 ;
 }
 .container-project .title {
     /* background-color: brown; */
@@ -295,7 +295,7 @@ li .btn-nav:hover {
     justify-content: start;
 }
 .card .icons li{
-    background-color: rgb(132, 132, 138);
+    background-color: rgb(101, 101, 102);
     border-radius: 50%;
     color: white;
     display: flex;
