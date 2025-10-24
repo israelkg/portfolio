@@ -2,9 +2,15 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectList, techIcons } from '../data/projects';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';  
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 const ProjectDetail = () => {
-  const { projectId } = useParams(); 
+  const { projectId } = useParams();
 
   const project = projectList.find((p) => p.id === Number(projectId));
 
@@ -29,11 +35,45 @@ const ProjectDetail = () => {
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 drop-shadow-lg">
           {project.title}
         </h1>
-        
-        <div className="overflow-hidden rounded-2xl shadow-xl mb-10">
-          <img  src={project.img}  alt={project.title}  className="w-full h-auto transform hover:scale-105 transition-transform duration-500"/>
+
+        <div className="relative overflow-hidden rounded-2xl shadow-xl mb-10">
+          {project.status === "Em desenvolvimento" && (
+            <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-[2px] flex flex-col items-center justify-center text-center text-white animate-pulse z-10">
+              <p className="text-2xl font-semibold mb-2">🚧 Em desenvolvimento</p>
+              <p className="text-base opacity-80">Disponível em breve</p>
+            </div>
+          )}
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 4000 }}
+            loop={true}
+            className="w-full rounded-2xl"
+          >
+            {Array.isArray(project.img)
+              ? project.img.map((image, i) => (
+                <SwiperSlide key={i}>
+                  <img
+                    src={image}
+                    alt={`${project.title} ${i + 1}`}
+                    className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
+                  />
+                </SwiperSlide>
+              ))
+              : (
+                <SwiperSlide>
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
+                  />
+                </SwiperSlide>
+              )}
+          </Swiper>
         </div>
-        
+
+
         <p className="text-lg text-slate-300 leading-relaxed mb-10"> {project.desc1}</p>
         <p className="text-lg text-slate-300 leading-relaxed mb-10"> {project.desc2} </p>
 
@@ -51,17 +91,24 @@ const ProjectDetail = () => {
         </div>
 
         <div className="flex flex-wrap gap-6">
-          <a href={project.link} target="_blank" rel="noopener noreferrer" 
-            className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl hover:opacity-90 transition-all shadow-lg"
-          >
-            <ExternalLink size={20} />Ver Projeto Online
-          </a>
-          <a href={project.repo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-xl hover:bg-slate-700 transition-all shadow-lg">
-            <Github size={20} />Repositório no GitHub
-          </a>
+          {project.link && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 rounded-xl hover:opacity-90 transition-all text-white shadow-lg" >
+              <ExternalLink size={20} /> Ver Projeto Online
+            </a>
+          )}
+          {project.repoFrontend && (
+            <a href={project.repoFrontend} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-xl hover:bg-slate-700 transition-all shadow-lg" >
+              <Github size={20} /> Repositório Front-end
+            </a>
+          )}
+          {project.repoBackend && project.repoBackend !== "#" && (
+            <a href={project.repoBackend} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-xl hover:bg-slate-700 transition-all shadow-lg">
+              <Github size={20} /> Repositório Back-end
+            </a>
+          )}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

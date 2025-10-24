@@ -1,6 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import { projectList, techIcons } from '../data/projects';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 const Projects = () => {
   const projects = projectList || [];
@@ -22,8 +28,8 @@ const Projects = () => {
                 if (!techIcon) return null;
 
                 return (
-                  <span 
-                    key={techName} 
+                  <span
+                    key={techName}
                     className="text-slate-400 group-hover:text-purple-400 transform hover:scale-110 transition-all duration-300"
                     title={techName}
                   >
@@ -34,15 +40,47 @@ const Projects = () => {
               .filter(Boolean);
 
             return (
-              <div 
-                key={index} 
-                className="bg-slate-800/60 rounded-2xl overflow-hidden shadow-lg border border-slate-700 hover:border-purple-500/60 hover:shadow-purple-500/20 transform hover:-translate-y-2 transition-all duration-500 group"
+              <div
+                key={index}
+                className="relative bg-slate-800/60 rounded-2xl overflow-hidden shadow-lg border border-slate-700 hover:border-purple-500/60 hover:shadow-purple-500/20 transform hover:-translate-y-2 transition-all duration-500 group"
               >
                 <div className="overflow-hidden">
-                  <img src={project.img} alt={project.title} 
-                  className="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-500" />
-
+                  <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    navigation
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 4000 }}
+                    loop={true}
+                    className="w-full aspect-[4/3] rounded-t-2xl"
+                  >
+                    {project.status === "Em desenvolvimento" && (
+                      <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-[2px] flex flex-col items-center justify-center text-center text-white animate-pulse z-10">
+                        <p className="text-lg font-semibold mb-2">🚧 Em desenvolvimento</p>
+                        <p className="text-sm opacity-80">Disponível em breve</p>
+                      </div>
+                    )}
+                    {Array.isArray(project.img)
+                      ? project.img.map((image, i) => (
+                        <SwiperSlide key={i}>
+                          <img
+                            src={image}
+                            alt={`${project.title} ${i + 1}`}
+                            className="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                        </SwiperSlide>
+                      ))
+                      : (
+                        <SwiperSlide>
+                          <img
+                            src={project.img}
+                            alt={project.title}
+                            className="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                        </SwiperSlide>
+                      )}
+                  </Swiper>
                 </div>
+
 
                 <div className="p-6 flex flex-col justify-between h-auto min-h-[208px]">
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 text-slate-100 group-hover:text-purple-400 transition-colors">
@@ -50,10 +88,10 @@ const Projects = () => {
                   </h3>
 
                   <p>{project.description}</p>
-                  
+
                   <div className="flex justify-between items-center mt-auto">
-                    <Link 
-                      to={`/projetos/${project.id}`} 
+                    <Link
+                      to={`/projetos/${project.id}`}
                       className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-5 py-2 rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-colors duration-300 shadow-md"
                     >
                       Ver mais
