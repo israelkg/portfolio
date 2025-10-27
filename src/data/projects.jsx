@@ -9,6 +9,7 @@ import cobranca2 from '../assets/carrosel/cobranca/cobranca2.gif';
 import cobranca3 from '../assets/carrosel/cobranca/cobranca3.gif';
 import cobranca4 from '../assets/carrosel/cobranca/cobranca4.gif';
 import mentora1 from '../assets/carrosel/mentora/mentora1.gif';
+import automacao1 from '../assets/carrosel/automacao/automacao1.png';
 
 import TwigIcon from '../components/icons/TwigIcon';
 import N8nIcon from '../components/icons/N8nIcon';
@@ -79,11 +80,11 @@ export const projectList = [
         status: "Em desenvolvimento"
     },
     {
-        img: 'a',
+        img: [automacao1],
         id: 4,
         title: 'Sistema de Automação',
         link: '#',
-        repoFrontend: 'https://israelkg.github.io/fetch-github-api/',
+        repoFrontend: '#',
         repoBackend: '#',
         desc1: 'Desenvolvimento de um sistema de automação utilizando N8n para integrar diversas APIs e serviços, facilitando fluxos de trabalho complexos e repetitivos.',
         desc2: 'O sistema utiliza a API do OpenAI para processamento avançado de linguagem natural, permitindo automações inteligentes e personalizadas. A base de dados é gerenciada com Supabase, oferecendo uma solução escalável e eficiente para armazenamento e consulta de dados.',
