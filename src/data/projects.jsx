@@ -15,6 +15,8 @@ import inspirar2 from '../assets/carrosel/inspirar-imoveis/contato.gif';
 import inspirar3 from '../assets/carrosel/inspirar-imoveis/parcerias.gif';
 import inspirar4 from '../assets/carrosel/inspirar-imoveis/servicos.gif';
 import inspirar5 from '../assets/carrosel/inspirar-imoveis/sobre.gif';
+import inspirarInicio from '../assets/carrosel/inspirar-imoveis/inicio.gif';
+import inspirarImoveis from '../assets/carrosel/inspirar-imoveis/imoveis.gif';
 
 import TwigIcon from '../components/icons/TwigIcon';
 import N8nIcon from '../components/icons/N8nIcon';
@@ -47,7 +49,7 @@ export const techIcons = {
 export const projectList = [
     // === PROJETOS CONCLUÍDOS ===
     {
-        img: [inspirar1, inspirar2, inspirar3, inspirar4, inspirar5],
+        img: [inspirarInicio, inspirarImoveis, inspirar1, inspirar2, inspirar3, inspirar4, inspirar5],
         id: 1,
         title: 'Inspirar Imóveis',
         link: 'https://inspirarimoveispb.com.br/',
