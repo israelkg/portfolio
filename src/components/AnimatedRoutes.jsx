@@ -2,9 +2,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import Home from "../pages/Home";
-import About from "../components/About"
-import Projects from "../components/Projects";
-import Contact from "../components/Contact";
 import ProjectDetail from "../pages/ProjectDetail";
 
 const AnimatedRoutes = () => {
@@ -26,9 +23,6 @@ const AnimatedRoutes = () => {
             </motion.div>
           }
         />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/projetos/:projectId" element={<ProjectDetail />} />
       </Routes>
     </AnimatePresence>

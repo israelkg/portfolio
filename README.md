@@ -1,60 +1,78 @@
-# Israel Gonçalves Medeiros - Portfólio Front-End
+# Israel Gonçalves Medeiros — Portfólio Full Stack
 
-Olá! 👋 Eu sou **Israel Gonçalves Medeiros**, desenvolvedor front-end apaixonado por criar aplicações modernas, intuitivas e funcionais. Aqui você encontrará meus projetos, habilidades e formas de contato.
+Olá! 👋
+Sou **Israel Gonçalves Medeiros**, desenvolvedor Full Stack com experiência no desenvolvimento de sistemas completos, desde o front-end até o back-end, integrações e regras de negócio.
+
+Atuo na construção de aplicações voltadas para uso real, como e-commerces, sistemas imobiliários, sistemas de cobrança/pagamento e plataformas administrativas, sempre buscando código organizado, soluções escaláveis e boa experiência para o usuário.
 
 ---
 
 ## 💻 Sobre Mim
-- Cursando **Análise e Desenvolvimento de Sistemas**
-- Experiência com **JavaScript, React, N8n, Php, Symfony**
-- Conhecimento em **Testes automatizados (Jest, REST)**
-- Interesse em **UX/UI, automação e dashboards interativos**
-- Trabalho **remotamente** e adoro desafios que me permitem aprender e evoluir.
+
+Atualmente curso **Análise e Desenvolvimento de Sistemas** e trabalho com desenvolvimento de software focado em resolver problemas reais através de tecnologia.
+
+Tenho experiência tanto na criação de interfaces modernas quanto na estruturação de APIs, bancos de dados e integrações com serviços externos.
+
+- Desenvolvedor Full Stack
+- Experiência com e-commerce, sistemas imobiliários e sistemas de pagamento
+- Integração de sistemas e automações com n8n
+- Conhecimento em processos de negócio, incluindo vendas e atendimento
+- Foco em aplicações funcionais, bem estruturadas e fáceis de manter
 
 ---
 
-## 🛠️ Tecnologias
-- **Front-end:** HTML, CSS, JavaScript, React, Tailwind, Chart.js
-- **Back-end:** Node.js, PHP, Symfony
-- **Banco de Dados:** MongoDB, PostgreSQL
-- **Ferramentas:** VSCode, Git, n8n (automação), Postman
-- **Testes:** Jest, testes automatizados de formulários e APIs
+## 🛠️ Tecnologias & Ferramentas
+
+### Front-end
+React, TypeScript, JavaScript, TailwindCSS, HTML, CSS
+
+### Back-end
+NestJS, Symfony, PHP, Node.js, TypeScript
+
+### Banco de Dados
+PostgreSQL, MongoDB, Supabase
+
+### Integrações & Automação
+n8n, OpenAI API, WhatsApp API, Pipefy
+
+### Ferramentas & Infraestrutura
+Docker, Git, VSCode, Postman
 
 ---
 
-## 📂 Projetos
+## 📂 Projetos em Destaque
 
-### 1. **Pokédex Interativa**
-- Aplicação em React que consome a **PokéAPI**
-- Funcionalidades: busca, filtros por tipo, detalhes de Pokémon, carregar mais pokémons
-- Testes automatizados de formulários e interações
+### 🏠 Inspirar Imóveis
 
-### 2. **Dashboard de Vendas - Pizzaria**
-- Gráficos interativos com **Chart.js**
-- Funcionalidades CRUD: Create, Update, Delete
-- Visualização de vendas semestrais e análise de pedidos
+Plataforma imobiliária completa desenvolvida do zero, composta por site público e painel administrativo para gestão de imóveis e proprietários.
 
-### 3. **Agente SDR Automatizado**
-- Automação de processos comerciais usando **n8n**
-- Qualificação de leads, envio de e-mails e mensagens via WhatsApp
-- Redução de tarefas repetitivas em mais de 75%
+O sistema foi projetado pensando em organização de dados, escalabilidade e facilidade de uso.
 
-### 4. **Formulário Multi-Step Symfony**
-- Sistema de criação de cobranças em etapas
-- Validações no front-end e back-end
-- Fluxo seguro e integrado com PHP/Symfony
+- **Stack:** React, TypeScript, NestJS, PostgreSQL, TailwindCSS
+- **Infraestrutura:** VPS com Docker
+- **Link:** [inspirarimoveispb.com.br](https://inspirarimoveispb.com.br/)
+
+### 🛒 Sistemas e E-commerce
+
+Desenvolvimento de sistemas voltados para venda de produtos e serviços, com controle administrativo, integrações e regras de negócio específicas para cada aplicação.
+
+### 🤖 Automações com n8n
+
+Uso de automações para integrar sistemas, reduzir tarefas manuais e otimizar fluxos internos, sempre como apoio ao sistema, e não como fim.
 
 ---
 
 ## 📬 Contato
-- **LinkedIn:** [linkedin.com/in/israelgoncalves](www.linkedin.com/in/israel-dev-fullstack)
-- **GitHub:** [github.com/israelgoncalves](https://github.com/israelkg)
+
+- **LinkedIn:** [linkedin.com/in/israel-dev-fullstack](https://www.linkedin.com/in/israel-dev-fullstack)
+- **GitHub:** [github.com/israelkg](https://github.com/israelkg)
 - **E-mail:** israeldev.net@gmail.com
 
 ---
 
 ## ⚡ Curiosidade
-Adoro combinar **tecnologia com automação**, sempre buscando soluções que economizem tempo e aumentem a eficiência dos processos.
+
+Gosto de desenvolver sistemas que fazem sentido no dia a dia, que resolvem problemas reais, dores reais, unindo lógica de negócio, tecnologia e organização, sem complicar o que pode ser simples.
 
 ---
 
