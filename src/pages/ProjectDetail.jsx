@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectList, techIcons } from '../data/projects';
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Lock } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';  
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -16,9 +16,9 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gradient-to-b from-slate-900 to-slate-800">
-        <h2 className="text-4xl font-bold mb-6 text-white drop-shadow-md">Projeto não encontrado!</h2>
-        <Link to="/" className="flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-xl hover:bg-purple-700 transition-all shadow-md" >
+      <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-cream dark:bg-ink transition-colors duration-300">
+        <h2 className="font-display text-4xl font-bold mb-6 text-ink dark:text-cream">Projeto não encontrado!</h2>
+        <Link to="/" className="flex items-center gap-2 bg-wine text-cream px-6 py-3 rounded-xl hover:bg-wine-deep transition-all shadow-md font-medium" >
           <ArrowLeft size={20} /> Voltar para a Home
         </Link>
       </div>
@@ -26,37 +26,52 @@ const ProjectDetail = () => {
   }
 
   return (
-    <section className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-slate-200">
+    <section className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-cream dark:bg-ink text-ink dark:text-cream-dim transition-colors duration-300">
       <div className="container mx-auto max-w-5xl">
-        <Link to="/" className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors mb-10 text-lg font-medium">
+        <Link to="/" className="flex items-center gap-2 text-wine dark:text-cream hover:text-wine-deep dark:hover:text-cream-dim transition-colors mb-10 text-lg font-medium">
           <ArrowLeft size={20} /> Voltar para todos os projetos
         </Link>
 
-        <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 drop-shadow-lg">
+        <h1 className="font-display text-5xl sm:text-6xl font-bold mb-6 text-ink dark:text-cream leading-[1.05]">
           {project.title}
         </h1>
 
         <div className="relative overflow-hidden rounded-2xl shadow-xl mb-10">
-          {project.status === "Em desenvolvimento" && (
-            <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-[2px] flex flex-col items-center justify-center text-center text-white animate-pulse z-10">
-              <p className="text-2xl font-semibold mb-2">🚧 Em desenvolvimento</p>
-              <p className="text-base opacity-80">Disponível em breve</p>
-            </div>
-          )}
+          <div className="absolute top-4 right-4 z-20 flex flex-col items-end gap-2">
+            {project.status === "Em produção" && (
+              <span className="bg-emerald-500/95 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                Em produção
+              </span>
+            )}
+            {project.status === "Em desenvolvimento" && (
+              <span className="bg-amber-500/95 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                Em desenvolvimento
+              </span>
+            )}
+            {project.status === "Vendido" && (
+              <span className="bg-violet-500/95 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                Vendido
+              </span>
+            )}
+          </div>
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             navigation
             pagination={{ clickable: true }}
-            autoplay={{ delay: 4000 }}
+            autoplay={{ delay: 9000, disableOnInteraction: false }}
             loop={true}
             className="w-full rounded-2xl"
           >
             {Array.isArray(project.img)
               ? project.img.map((image, i) => (
-                <SwiperSlide key={i}>
+                <SwiperSlide
+                  key={i}
+                  data-swiper-autoplay={project.slideDelays?.[i] ?? 9000}
+                >
                   <img
                     src={image}
                     alt={`${project.title} ${i + 1}`}
+                    loading="lazy"
                     className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
                   />
                 </SwiperSlide>
@@ -66,6 +81,7 @@ const ProjectDetail = () => {
                   <img
                     src={project.img}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
                   />
                 </SwiperSlide>
@@ -74,15 +90,17 @@ const ProjectDetail = () => {
         </div>
 
 
-        <p className="text-lg text-slate-300 leading-relaxed mb-10"> {project.desc1}</p>
-        <p className="text-lg text-slate-300 leading-relaxed mb-10"> {project.desc2} </p>
+        <div className="bg-cream-dim/20 dark:bg-ink-soft backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-10 border border-wine/15 dark:border-cream-dim/10 shadow-xl transition-colors duration-300">
+          <p className="text-lg text-ink/85 dark:text-cream leading-relaxed mb-6">{project.desc1}</p>
+          <p className="text-lg text-ink/85 dark:text-cream leading-relaxed">{project.desc2}</p>
+        </div>
 
         <div className="mb-10">
-          <h3 className="text-2xl font-semibold mb-4 text-slate-100">Tecnologias utilizadas</h3>
+          <h3 className="font-display text-2xl font-semibold mb-4 text-ink dark:text-cream transition-colors">Tecnologias utilizadas</h3>
           <div className="flex flex-wrap gap-4">
             {project.tech.map((techName) => (
-              <span key={techName} className="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors shadow-md" title={techName}>
-                <span className="text-purple-400 text-2xl">
+              <span key={techName} className="flex items-center justify-center w-12 h-12 rounded-xl bg-cream/50 dark:bg-ink-soft border border-wine/15 dark:border-cream-dim/10 hover:bg-cream-dim/40 dark:hover:bg-ink-card transition-colors shadow-md" title={techName}>
+                <span className="text-wine dark:text-cream text-2xl">
                   {techIcons[techName] || techIcons.default}
                 </span>
               </span>
@@ -91,20 +109,25 @@ const ProjectDetail = () => {
         </div>
 
         <div className="flex flex-wrap gap-6">
-          {project.link && (
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 rounded-xl hover:opacity-90 transition-all text-white shadow-lg" >
+          {project.link && project.link !== "#" && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-wine !text-cream px-6 py-3 rounded-xl hover:bg-wine-deep transition-all shadow-lg font-medium" >
               <ExternalLink size={20} /> Ver Projeto Online
             </a>
           )}
-          {project.repoFrontend && (
-            <a href={project.repoFrontend} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-xl hover:bg-slate-700 transition-all shadow-lg" >
+          {project.repoFrontend && project.repoFrontend !== "#" && (
+            <a href={project.repoFrontend} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-ink-soft !text-cream px-6 py-3 rounded-xl hover:bg-ink-card transition-all shadow-lg border border-cream-dim/15" >
               <Github size={20} /> Repositório Front-end
             </a>
           )}
           {project.repoBackend && project.repoBackend !== "#" && (
-            <a href={project.repoBackend} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-xl hover:bg-slate-700 transition-all shadow-lg">
+            <a href={project.repoBackend} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-ink-soft !text-cream px-6 py-3 rounded-xl hover:bg-ink-card transition-all shadow-lg border border-cream-dim/15">
               <Github size={20} /> Repositório Back-end
             </a>
+          )}
+          {project.isPrivate && (
+            <span className="flex items-center gap-2 bg-cream-dim/30 dark:bg-ink-card text-ink/80 dark:text-cream-dim px-6 py-3 rounded-xl font-medium border border-wine/20 dark:border-cream-dim/15">
+              <Lock size={18} /> Código privado — disponível sob solicitação
+            </span>
           )}
         </div>
       </div>

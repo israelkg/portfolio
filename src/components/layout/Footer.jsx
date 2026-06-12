@@ -1,41 +1,44 @@
 import React from 'react';
-import { Github, Linkedin, Code } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900/80 border-t border-slate-700/50 py-8 ">
+    <footer className="bg-ink-soft dark:bg-ink-soft border-t border-wine/15 dark:border-cream-dim/10 py-10 transition-colors duration-300">
       <div className="container mx-auto px-4 text-center">
-        
+        <p className="font-display italic text-wine text-lg mb-4 tracking-wide">
+          obrigado por passar por aqui
+        </p>
+
         <div className="flex justify-center space-x-6 mb-6">
-          <a 
-            href="https://github.com/israelkg" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-slate-400 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110"
+          <a
+            href="https://github.com/israelkg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="text-cream-dim hover:text-cream transition-colors duration-300 transform hover:scale-110"
           >
             <Github size={28} />
           </a>
-          <a 
-            href="https://www.linkedin.com/in/israel-dev-fullstack" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-slate-400 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110"
+          <a
+            href="https://www.linkedin.com/in/israel-dev-fullstack"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-cream-dim hover:text-cream transition-colors duration-300 transform hover:scale-110"
           >
             <Linkedin size={28} />
           </a>
-          <a 
-            href="https://medium.com/@seu-usuario" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-slate-400 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110"
+          <a
+            href="mailto:israelgmedeiros@gmail.com"
+            aria-label="Email"
+            className="text-cream-dim hover:text-cream transition-colors duration-300 transform hover:scale-110"
           >
-            <Code size={28} />
+            <Mail size={28} />
           </a>
         </div>
 
-        <p className="text-slate-400 text-sm">
-          &copy; {new Date().getFullYear()} <span className="text-purple-400 font-semibold">Israel Gonçalves Medeiros</span>.  
-          Todos os direitos reservados.
+        <p className="text-cream-dim/80 text-sm tracking-wide">
+          &copy; {new Date().getFullYear()} <span className="text-cream font-semibold">Israel Gonçalves Medeiros</span>
         </p>
       </div>
     </footer>

@@ -1,64 +1,71 @@
-# Israel Gonçalves Medeiros — Portfólio Full Stack
+# Israel Gonçalves Medeiros — Portfólio Full-Stack
 
 Olá! 👋
-Sou **Israel Gonçalves Medeiros**, desenvolvedor Full Stack com experiência no desenvolvimento de sistemas completos, desde o front-end até o back-end, integrações e regras de negócio.
+Sou **Israel Gonçalves Medeiros**, desenvolvedor full-stack focado em construir produto web inteiro — do design ao deploy.
 
-Atuo na construção de aplicações voltadas para uso real, como e-commerces, sistemas imobiliários, sistemas de cobrança/pagamento e plataformas administrativas, sempre buscando código organizado, soluções escaláveis e boa experiência para o usuário.
-
----
-
-## 💻 Sobre Mim
-
-Atualmente curso **Análise e Desenvolvimento de Sistemas** e trabalho com desenvolvimento de software focado em resolver problemas reais através de tecnologia.
-
-Tenho experiência tanto na criação de interfaces modernas quanto na estruturação de APIs, bancos de dados e integrações com serviços externos.
-
-- Desenvolvedor Full Stack
-- Experiência com e-commerce, sistemas imobiliários e sistemas de pagamento
-- Integração de sistemas e automações com n8n
-- Conhecimento em processos de negócio, incluindo vendas e atendimento
-- Foco em aplicações funcionais, bem estruturadas e fáceis de manter
+Aplicações reais, em produção, com infraestrutura própria e processo de entrega contínua. Trabalho tanto na interface quanto em API, banco, autenticação, integrações e operação em VPS.
 
 ---
 
-## 🛠️ Tecnologias & Ferramentas
+## 💻 Sobre
+
+Brasileiro, full-stack. Hoje construo o **Berry System** — ecossistema de produtos dev/IA/infra (Berry Ops, Berry Kit, Berry City, Berry Auth).
+
+Também atendo clientes em freelance.
+
+Aberto a **CLT** e **freelance**.
+
+---
+
+## 🛠️ Stack principal
 
 ### Front-end
-React, TypeScript, JavaScript, TailwindCSS, HTML, CSS
+
+React, Next.js, TypeScript, TailwindCSS
 
 ### Back-end
-NestJS, Symfony, PHP, Node.js, TypeScript
 
-### Banco de Dados
-PostgreSQL, MongoDB, Supabase
+NestJS, Node.js, TypeScript, Prisma, BullMQ
 
-### Integrações & Automação
-n8n, OpenAI API, WhatsApp API, Pipefy
+### Banco de dados
 
-### Ferramentas & Infraestrutura
-Docker, Git, VSCode, Postman
+PostgreSQL, Redis
+
+### Infra
+
+Docker, VPS, Nginx, Cloudflare, ssh2 / SFTP
 
 ---
 
-## 📂 Projetos em Destaque
+## 📂 Projetos em destaque
 
-### 🏠 Inspirar Imóveis
+### 🟣 Berry Ops — Em produção
 
-Plataforma imobiliária completa desenvolvida do zero, composta por site público e painel administrativo para gestão de imóveis e proprietários.
+Agente DevOps conversacional (WhatsApp + web → SSH). Multi-tenant, multi-server. Risk classifier, gate de aprovação, deploy macro, file editor remoto via SFTP com diff atomico e backup.
 
-O sistema foi projetado pensando em organização de dados, escalabilidade e facilidade de uso.
+- **Stack:** NestJS · Next 15 · Prisma · Postgres · BullMQ · Redis · ssh2
+- **Live:** [ops.berrysystem.com.br](https://ops.berrysystem.com.br)
 
-- **Stack:** React, TypeScript, NestJS, PostgreSQL, TailwindCSS
-- **Infraestrutura:** VPS com Docker
-- **Link:** [inspirarimoveispb.com.br](https://inspirarimoveispb.com.br/)
+### 🍓 Berry Kit — Em produção
 
-### 🛒 Sistemas e E-commerce
+API self-hosted HTML → PDF. Node + Puppeteer empacotado em Docker. Deploy em 2 minutos via `docker compose`. Open core.
 
-Desenvolvimento de sistemas voltados para venda de produtos e serviços, com controle administrativo, integrações e regras de negócio específicas para cada aplicação.
+- **Stack:** Node.js · TypeScript · Docker · Puppeteer
+- **Live:** [kit.berrysystem.com.br](https://kit.berrysystem.com.br)
 
-### 🤖 Automações com n8n
+### 🌐 Berry System (hub) — Em produção
 
-Uso de automações para integrar sistemas, reduzir tarefas manuais e otimizar fluxos internos, sempre como apoio ao sistema, e não como fim.
+Hub institucional do ecossistema Berry. Catálogo de produtos, blog técnico, contato comercial. Next 16 + Tailwind v4. SEO completo (sitemap, OpenGraph dinâmico, JSON-LD).
+
+- **Stack:** Next.js · React · TypeScript · TailwindCSS · Docker
+- **Live:** [berrysystem.com.br](https://berrysystem.com.br)
+
+### 🏠 Sistema Imobiliário — Em produção
+
+Plataforma imobiliária completa para cliente real. Site público com SEO + painel administrativo. CRUD de imóveis e proprietários, gestão de imagens, infraestrutura em VPS com Docker.
+
+- **Stack:** React · TypeScript · NestJS · PostgreSQL · TailwindCSS · Docker
+- **Live:** [patriciafariasimoveis.com.br](https://patriciafariasimoveis.com.br/)
 
 ---
 
@@ -66,14 +73,19 @@ Uso de automações para integrar sistemas, reduzir tarefas manuais e otimizar f
 
 - **LinkedIn:** [linkedin.com/in/israel-dev-fullstack](https://www.linkedin.com/in/israel-dev-fullstack)
 - **GitHub:** [github.com/israelkg](https://github.com/israelkg)
-- **E-mail:** israeldev.net@gmail.com
+- **E-mail:** [israelgmedeiros@gmail.com](mailto:israelgmedeiros@gmail.com)
+- **WhatsApp:** +55 (46) 99103-3806
 
 ---
 
-## ⚡ Curiosidade
+## ⚡ Local dev
 
-Gosto de desenvolver sistemas que fazem sentido no dia a dia, que resolvem problemas reais, dores reais, unindo lógica de negócio, tecnologia e organização, sem complicar o que pode ser simples.
+```bash
+npm install
+npm run dev       # vite dev server
+npm run build     # build produção
+npm run preview   # preview do build
+npm run lint
+```
 
----
-
-Obrigado por visitar meu portfólio! 🚀
+Stack: React 19 + Vite 7 + Tailwind 4 + Framer Motion + Swiper.
